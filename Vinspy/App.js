@@ -8,6 +8,7 @@ import { useFonts } from '@use-expo/font'
 import * as SplashScreen from 'expo-splash-screen';
 import Cards from './components/Cards';
 
+
 const tab = createBottomTabNavigator();
 
 function AccueilScreen() {
@@ -122,7 +123,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   titre1: {
-    marginBottom: 30,
+    marginBottom: 75,
     flex: 1,
     fontFamily: "Raleway-Bold",
     fontSize: 30,
