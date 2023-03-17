@@ -1,5 +1,6 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { ScrollView, Image, StyleSheet, Text, View } from "react-native";
+import Animated, { Layout, ZoomIn, ZoomOut } from 'react-native-reanimated';
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
@@ -7,11 +8,12 @@ import React, { useState } from "react";
 import { useFonts } from '@use-expo/font'
 import * as SplashScreen from 'expo-splash-screen';
 import Cards from './components/Cards';
-
+import { FadeIn, FadeInDown } from 'react-native-reanimated';
 
 const tab = createBottomTabNavigator();
 
 function AccueilScreen() {
+
   const [fontsLoaded] = useFonts({
     'Raleway-Black': require('./assets/fonts/Raleway-Black.ttf'),
     'Raleway-Bold': require('./assets/fonts/Raleway-Bold.ttf'),
@@ -32,9 +34,11 @@ function AccueilScreen() {
   return (
     <ScrollView style={{backgroundColor: "white"}}>
   <View style={styles.container}>
-    <Image
+    <Animated.Image
+    entering={ZoomIn}
+    exiting={ZoomOut}
       source={require('./assets/medias/logo-vinspy-long-1.png')}
-      style={{width: 400, height: 175, resizeMode: "cover", top: 0, position: "relative", zIndex: 10 }}
+      style={{width: 400, height: 175, resizeMode: "cover", top: 0, position: "relative", zIndex: 10, marginBottom: 30, }}
     />
     <Image
       source={require('./assets/medias/semi-background-3.png')}
@@ -42,9 +46,10 @@ function AccueilScreen() {
     />
   </View>
   <View style={{position: "relative"}}>
-      <Text style={styles.titre1}>LE MEILLEUR OUTIL POUR{"\n"}COP SUR VINTED !</Text>
+      <Animated.Text entering={FadeInDown} style={styles.titre1}>LE MEILLEUR OUTIL POUR{"\n"}COP SUR VINTED !</Animated.Text>
       <View><Cards /></View>
-      <Text style={styles.titre2}>DECOUVRE NOS OFFRES</Text>
+      <Text style={styles.titre2}>DÉCOUVRE NOS OFFRES</Text>
+      <Animated.Text style={styles.titre2}>DÉCOUVRE NOS OFFRES</Animated.Text>
     </View>
 </ScrollView>
   );
@@ -125,7 +130,7 @@ const styles = StyleSheet.create({
   titre1: {
     marginBottom: 75,
     flex: 1,
-    fontFamily: "Raleway-Bold",
+    fontFamily: "Raleway-Black",
     fontSize: 30,
     textAlign: "center",
     alignItems: "center",
@@ -133,7 +138,7 @@ const styles = StyleSheet.create({
   },
   titre2: {
     flex: 1,
-    fontFamily: "Raleway-Bold",
+    fontFamily: "Raleway-Black",
     fontSize: 30,
     textAlign: "center",
     alignItems: "center",
