@@ -9,8 +9,12 @@ import { useFonts } from '@use-expo/font'
 import * as SplashScreen from 'expo-splash-screen';
 import Cards from './components/Cards';
 import { FadeIn, FadeInDown } from 'react-native-reanimated';
+import VintedNotifications from './components/VintedNotifications';
+import AlerteBanner from './components/AlerteBanner';
 
 const tab = createBottomTabNavigator();
+
+
 
 function AccueilScreen() {
 
@@ -49,6 +53,7 @@ function AccueilScreen() {
       <Animated.Text entering={FadeInDown} style={styles.titre1}>LE MEILLEUR OUTIL POUR{"\n"}COP SUR VINTED !</Animated.Text>
       <View><Cards /></View>
       <Text style={styles.titre2}>DÉCOUVRE NOS OFFRES</Text>
+      <View><Text></Text></View>
       <Animated.Text style={styles.titre2}>DÉCOUVRE NOS OFFRES</Animated.Text>
     </View>
 </ScrollView>
@@ -67,7 +72,7 @@ function ProfilScreen() {
 function AlerteScreen() {
   return (
     <View style={styles.container}>
-      <Text>Alertes</Text>
+      <Text><AlerteBanner /></Text>
     </View>
   );
 }
