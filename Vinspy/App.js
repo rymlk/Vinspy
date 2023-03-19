@@ -63,7 +63,9 @@ function AccueilScreen() {
 function ProfilScreen() {
   return (
     <View style={styles.container}>
+      <ScrollView>
       <Text>Profil</Text>
+      </ScrollView>
     </View>
   );
 }
@@ -71,7 +73,7 @@ function ProfilScreen() {
 
 function AlerteScreen() {
   return (
-    <View style={styles.container}>
+    <View >
       <Text><AlerteBanner /></Text>
     </View>
   );
@@ -109,6 +111,7 @@ export default function App() {
 
             return (
               <Ionicons
+              style={{marginBottom: "-15%"}}
                 name={iconName}
                 size={30}
                 color={focused || isFocused ? "#07858c" : "#09b1ba"}
@@ -130,7 +133,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: 30,
+    marginBottom: 15,
   },
   titre1: {
     marginBottom: 75,
