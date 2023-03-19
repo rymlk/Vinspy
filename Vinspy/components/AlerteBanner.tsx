@@ -1,6 +1,7 @@
 import { useFonts } from "@use-expo/font";
 import React, { useCallback, useState } from "react";
 import * as SplashScreen from "expo-splash-screen";
+import BoutonModal from "./BoutonModal";
 import {
   StyleSheet,
   Text,
@@ -103,6 +104,7 @@ export default function AlerteBanner() {
           marginBottom: 30,
         }}
       />
+      <BoutonModal />
     </View>
   );
 }
