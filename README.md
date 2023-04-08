@@ -18,6 +18,6 @@ En bref, _Vinspy_ est une application pratique et intelligente pour les amateurs
 - 💻 **Interface utilisateur conviviale** : L'interface utilisateur de _Vinspy_ est intuitive et facile à naviguer.
 
 - 🤙 **Disponible sur iOS et Android** : Vous pouvez utiliser _Vinspy_ sur votre téléphone portable ou votre tablette, car l'application est disponible sur les deux systèmes d'exploitation.
-## 🔗 Links
+## 🔗 Liens
 [![portfolio](https://img.shields.io/badge/mon_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://malkirayane.com/)
 
